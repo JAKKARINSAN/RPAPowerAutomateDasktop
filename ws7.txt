@@ -1,0 +1,6 @@
+SET row TO 8
+Web.InvokeWebService.InvokeWebService Url: $'''https://script.google.com/macros/s/AKfycbwMXZ6mxYwP7qNsHtc3u6HguEi5Y04sRToc1oypRpX2Z86W7KhrVM_oTVAtWFsndvhm/exec?row=%row%''' Method: Web.Method.Get Accept: $'''application/json''' ContentType: $'''application/json''' ConnectionTimeout: 30 FollowRedirection: True ClearCookies: False FailOnErrorStatus: False EncodeRequestBody: False UserAgent: $'''Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.21) Gecko/20100312 Firefox/3.6''' Encoding: Web.Encoding.AutoDetect AcceptUntrustedCertificates: False ResponseHeaders=> WebServiceResponseHeaders Response=> WebServiceResponse StatusCode=> StatusCode
+Variables.ConvertJsonToCustomObject Json: WebServiceResponse CustomObject=> JsonAsCustomObject
+SET Col1 TO JsonAsCustomObject['data'][0]
+SET Col2 TO JsonAsCustomObject['data'][1]
+SET Col3 TO JsonAsCustomObject['data'][2]
