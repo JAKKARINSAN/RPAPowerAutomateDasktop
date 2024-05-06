@@ -5,9 +5,6 @@ ON ERROR
 END
 IF new = $'''true''' THEN
     WebAutomation.LaunchEdge.LaunchEdge Url: url WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 BrowserInstance=> Browser
-    ON ERROR
-        SET new TO $'''true'''
-    END
 END
 WebAutomation.PressButton.PressButton BrowserInstance: Browser Control: appmask['Web Page \'https://rpa-training-pea.web.app/\'']['Button \'Reset\''] WaitForPageToLoadTimeout: 60
 LOOP LoopIndex FROM 1 TO 5 STEP 1
