@@ -1,5 +1,5 @@
 SET url TO $'''https://rpa-training-pea.web.app/'''
-WebAutomation.LaunchEdge.AttachToEdgeByUrl TabUrl: url AttachTimeout: 5 BrowserInstance=> Browser
+WebAutomation.LaunchEdge.AttachToEdgeByUrl TabUrl: url AttachTimeout: 3 BrowserInstance=> Browser
 ON ERROR
     SET new TO $'''true'''
 END
